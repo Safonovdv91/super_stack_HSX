@@ -10,4 +10,6 @@ Make imitation of the work "stack"
 
 Напишите набор юнит-тестов для получившегося класса.
 Опубликуйте результат на github с инструкцией по запуску тестов.
+----
+[![Run_Tests_On_Push](https://github.com/Safonovdv91/super_stack_HSX/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/Safonovdv91/super_stack_HSX/actions/workflows/main.yml)
 
