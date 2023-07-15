@@ -13,65 +13,51 @@
 
 
 class SuperStackElement:
-    """
-    Класс созданый для реализации работы класса SuperStack, принимает 2 значения, последний и предпоследний элементы.
+    """ Класс созданый для реализации работы класса SuperStack,
+     принимает 2 значения, последний и предпоследний элементы.
     """
 
-    def __init__(self, el=None, old_el=None):
-        self.old_el = old_el
-        self.el = el
+    def __init__(self, element=None, old_element=None):
+        self.old_element = old_element
+        self.element = element
 
 
 class SuperStack:
+    """ Класс имитирующий работу стэка.
     """
-    Класс имитирующий работу стэка.
-    """
+
     def __init__(self):
         self.ss_element = None
 
     def push(self, element):
+        """ Добавляет элемент в очередь СуперСтека
+        """
         self.ss_element = SuperStackElement(element, self.ss_element)
 
     def peek(self):
+        """ Возвращает последний добавленный элемент
+         Бросает IndexError если СуперСтек пустой"""
         if self.ss_element is None:
             raise IndexError("Peek out of index")
-        return self.ss_element.el
+        return self.ss_element.element
 
     def pop(self):
+        """ Удаляет и возвращает последний добавленный элемент
+         Бросает IndexError если СуперСтек пустой"""
         if self.ss_element is None:
             raise IndexError("Pop out of index")
         pop_element = self.ss_element
-        old_element = self.ss_element.old_el
+        old_element = self.ss_element.old_element
         if old_element is None:
             self.ss_element = None
-            return pop_element.el
-        self.ss_element = SuperStackElement(old_element.el, old_element.old_el)
-        return pop_element.el
+            return pop_element.element
+        self.ss_element = SuperStackElement(old_element.element, old_element.old_element)
+        return pop_element.element
 
 
 def main():
-    ss = SuperStack()
-    print(ss.push(110))
-    print(ss.push(111))
-    print(ss.push(112))
-    print(ss.push(113))
-    print(ss.push(114))
-    print(ss.push(115))
-    print(ss.peek())    #115
-    print(ss.pop())     #115
-    print(ss.pop())     #114
-    print(ss.pop())     #113
-    print(ss.peek())    #112
-    print(ss.pop())     #112
-    print(ss.pop())     #111
-    print(ss.pop())     #110
-    print(ss.push([12, 12]))
+    pass
 
 
 if __name__ == "__main__":
     main()
-
-
-
-
-

@@ -47,6 +47,7 @@ class TestSuperStackPush(unittest.TestCase):
         self.assertEqual(ss.pop(), 11)
 
     def test_SS_peek_Raise_IndexOut(self):
+        "peek пустого стека"
         ss = main.SuperStack()
 
         with self.assertRaises(IndexError):
@@ -54,6 +55,7 @@ class TestSuperStackPush(unittest.TestCase):
 
 
     def test_SS_POP_Raise_IndexOut(self):
+        "pop пустого стека"
         ss = main.SuperStack()
 
         with self.assertRaises(IndexError):
