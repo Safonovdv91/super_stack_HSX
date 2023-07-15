@@ -39,7 +39,7 @@ class SuperStack:
 
     def pop(self):
         if self.ss_element is None:
-            return None
+            raise IndexError("Pop out of index")
         pop_element = self.ss_element
         old_element = self.ss_element.old_el
         if old_element is None:

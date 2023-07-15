@@ -52,3 +52,14 @@ class TestSuperStackPush(unittest.TestCase):
         with self.assertRaises(IndexError):
             ss.peek()
 
+
+    def test_SS_POP_Raise_IndexOut(self):
+        ss = main.SuperStack()
+
+        with self.assertRaises(IndexError):
+            ss.pop()
+
+        ss.push(12)
+        ss.pop()
+        with self.assertRaises(IndexError):
+            ss.pop()
