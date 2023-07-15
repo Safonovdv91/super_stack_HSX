@@ -21,7 +21,6 @@ class TestSuperStackPush(unittest.TestCase):
         "Проверка корректных значений"
         ss = main.SuperStack()
 
-        self.assertEqual(ss.peek(), None)
         ss.push(1)
         ss.push(2)
         ss.push(3)
@@ -37,11 +36,8 @@ class TestSuperStackPush(unittest.TestCase):
         "Проверка корректных значений"
         ss = main.SuperStack()
 
-        self.assertEqual(ss.pop(), None)
-        self.assertEqual(ss.pop(), None)
         ss.push(12)
         self.assertEqual(ss.pop(), 12)
-        self.assertEqual(ss.peek(), None)
         ss.push(11)
         ss.push(["12", 13])
         ss.push(13)
@@ -49,6 +45,10 @@ class TestSuperStackPush(unittest.TestCase):
         self.assertEqual(ss.peek(), ["12", 13])
         self.assertEqual(ss.pop(), ["12", 13])
         self.assertEqual(ss.pop(), 11)
-        self.assertEqual(ss.pop(), None)
-        self.assertEqual(ss.pop(), None)
-        self.assertEqual(ss.peek(), None)
+
+    def test_SS_peek_Raise_IndexOut(self):
+        ss = main.SuperStack()
+
+        with self.assertRaises(IndexError):
+            ss.peek()
+

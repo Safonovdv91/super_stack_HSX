@@ -34,7 +34,7 @@ class SuperStack:
 
     def peek(self):
         if self.ss_element is None:
-            return None
+            raise IndexError("Peek out of index")
         return self.ss_element.el
 
     def pop(self):
@@ -51,7 +51,6 @@ class SuperStack:
 
 def main():
     ss = SuperStack()
-
     print(ss.push(110))
     print(ss.push(111))
     print(ss.push(112))
@@ -66,8 +65,6 @@ def main():
     print(ss.pop())     #112
     print(ss.pop())     #111
     print(ss.pop())     #110
-    print(ss.peek())    # none
-    print(ss.pop())     # none
     print(ss.push([12, 12]))
 
 
