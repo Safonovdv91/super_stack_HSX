@@ -45,7 +45,7 @@ class SuperStack:
         if old_element is None:
             self.ss_element = None
             return pop_element.el
-        self.ss_element = SuperStackElement(old_element, old_element.old_el)
+        self.ss_element = SuperStackElement(old_element.el, old_element.old_el)
         return pop_element.el
 
 
