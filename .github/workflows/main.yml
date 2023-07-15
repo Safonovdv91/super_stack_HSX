@@ -3,7 +3,7 @@ name: Run_Tests_On_Push
 on: 
   push:
     branches:
-      - master
+      - main
 
 jobs:
   test:
