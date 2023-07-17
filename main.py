@@ -46,12 +46,15 @@ class SuperStack:
          Бросает IndexError если СуперСтек пустой"""
         if self.ss_element is None:
             raise IndexError("Pop out of index")
+
         pop_element = self.ss_element
         old_element = self.ss_element.old_element
+
         if old_element is None:
             self.ss_element = None
             return pop_element.element
-        self.ss_element = SuperStackElement(old_element.element, old_element.old_element)
+
+        self.ss_element = old_element
         return pop_element.element
 
 
